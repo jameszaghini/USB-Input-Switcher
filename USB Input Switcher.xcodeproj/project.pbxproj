@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2E6AE71224C26DB400EEA4CF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AE71124C26DB400EEA4CF /* main.swift */; };
+		2E6AE71924C2733500EEA4CF /* USBWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AE71824C2733500EEA4CF /* USBWatcher.swift */; };
+		2E6AE71B24C273B900EEA4CF /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AE71A24C273B900EEA4CF /* InputSource.swift */; };
+		2E6AE71D24C275BB00EEA4CF /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AE71C24C275BB00EEA4CF /* Application.swift */; };
+		2E6AE72424C2D57100EEA4CF /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 2E6AE72324C2D57100EEA4CF /* Yams */; };
+		2E6AE72624C31DE800EEA4CF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AE72524C31DE800EEA4CF /* Config.swift */; };
+		2E6AE72824C3B5B800EEA4CF /* USBInputPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AE72724C3B5B800EEA4CF /* USBInputPair.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +29,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2E6AE70E24C26DB400EEA4CF /* USB Input Switcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "USB Input Switcher"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E6AE70E24C26DB400EEA4CF /* USBInputSwitcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = USBInputSwitcher; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6AE71124C26DB400EEA4CF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2E6AE71824C2733500EEA4CF /* USBWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBWatcher.swift; sourceTree = "<group>"; };
+		2E6AE71A24C273B900EEA4CF /* InputSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSource.swift; sourceTree = "<group>"; };
+		2E6AE71C24C275BB00EEA4CF /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		2E6AE72524C31DE800EEA4CF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		2E6AE72724C3B5B800EEA4CF /* USBInputPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBInputPair.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6AE72424C2D57100EEA4CF /* Yams in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,7 +61,7 @@
 		2E6AE70F24C26DB400EEA4CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E6AE70E24C26DB400EEA4CF /* USB Input Switcher */,
+				2E6AE70E24C26DB400EEA4CF /* USBInputSwitcher */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,7 +69,12 @@
 		2E6AE71024C26DB400EEA4CF /* USB Input Switcher */ = {
 			isa = PBXGroup;
 			children = (
+				2E6AE71C24C275BB00EEA4CF /* Application.swift */,
+				2E6AE72524C31DE800EEA4CF /* Config.swift */,
+				2E6AE71A24C273B900EEA4CF /* InputSource.swift */,
 				2E6AE71124C26DB400EEA4CF /* main.swift */,
+				2E6AE71824C2733500EEA4CF /* USBWatcher.swift */,
+				2E6AE72724C3B5B800EEA4CF /* USBInputPair.swift */,
 			);
 			path = "USB Input Switcher";
 			sourceTree = "<group>";
@@ -65,21 +82,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E6AE70D24C26DB400EEA4CF /* USB Input Switcher */ = {
+		2E6AE70D24C26DB400EEA4CF /* USBInputSwitcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E6AE71524C26DB400EEA4CF /* Build configuration list for PBXNativeTarget "USB Input Switcher" */;
+			buildConfigurationList = 2E6AE71524C26DB400EEA4CF /* Build configuration list for PBXNativeTarget "USBInputSwitcher" */;
 			buildPhases = (
 				2E6AE70A24C26DB400EEA4CF /* Sources */,
 				2E6AE70B24C26DB400EEA4CF /* Frameworks */,
 				2E6AE70C24C26DB400EEA4CF /* CopyFiles */,
+				2E6AE71E24C275FC00EEA4CF /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "USB Input Switcher";
+			name = USBInputSwitcher;
+			packageProductDependencies = (
+				2E6AE72324C2D57100EEA4CF /* Yams */,
+			);
 			productName = "USB Input Switcher";
-			productReference = 2E6AE70E24C26DB400EEA4CF /* USB Input Switcher */;
+			productReference = 2E6AE70E24C26DB400EEA4CF /* USBInputSwitcher */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -106,21 +127,49 @@
 				Base,
 			);
 			mainGroup = 2E6AE70524C26DB300EEA4CF;
+			packageReferences = (
+				2E6AE72224C2D57100EEA4CF /* XCRemoteSwiftPackageReference "Yams" */,
+			);
 			productRefGroup = 2E6AE70F24C26DB400EEA4CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E6AE70D24C26DB400EEA4CF /* USB Input Switcher */,
+				2E6AE70D24C26DB400EEA4CF /* USBInputSwitcher */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E6AE71E24C275FC00EEA4CF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E6AE70A24C26DB400EEA4CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6AE71D24C275BB00EEA4CF /* Application.swift in Sources */,
 				2E6AE71224C26DB400EEA4CF /* main.swift in Sources */,
+				2E6AE72624C31DE800EEA4CF /* Config.swift in Sources */,
+				2E6AE71B24C273B900EEA4CF /* InputSource.swift in Sources */,
+				2E6AE71924C2733500EEA4CF /* USBWatcher.swift in Sources */,
+				2E6AE72824C3B5B800EEA4CF /* USBInputPair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +323,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E6AE71524C26DB400EEA4CF /* Build configuration list for PBXNativeTarget "USB Input Switcher" */ = {
+		2E6AE71524C26DB400EEA4CF /* Build configuration list for PBXNativeTarget "USBInputSwitcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E6AE71624C26DB400EEA4CF /* Debug */,
@@ -284,6 +333,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E6AE72224C2D57100EEA4CF /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E6AE72324C2D57100EEA4CF /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E6AE72224C2D57100EEA4CF /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E6AE70624C26DB300EEA4CF /* Project object */;
 }

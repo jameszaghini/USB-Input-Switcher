@@ -8,5 +8,6 @@
 
 import Foundation
 
-print("Hello, World!")
+let application = Application()
 
+RunLoop.main.run()

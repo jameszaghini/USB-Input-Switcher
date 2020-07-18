@@ -1,0 +1,6 @@
+disconnected: "colemak"
+connected:
+- usb: "Preonic"
+  on: "Australian"
+- usb: "Planck"
+  on: "Australian"
