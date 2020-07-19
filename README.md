@@ -11,6 +11,6 @@ When unplugging the keyboard, you want it set back to Colemak/Dvorak for the lap
 
 # Setup
 
-Copy `USBInputSwitcher` to `/usr/local/bin`.
-Copy `com.zaghini.USBInputSwitcher.plist` to `~/Library/LaunchAgents`
-Create the config file at `~/.usbinputswitcher/config.yaml`
+* Copy `USBInputSwitcher` to `/usr/local/bin`.
+* Copy `com.zaghini.USBInputSwitcher.plist` to `~/Library/LaunchAgents`
+* Create the config file at `~/.usbinputswitcher/config.yaml`
