@@ -14,3 +14,17 @@ When unplugging the keyboard, you want it set back to Colemak/Dvorak for the lap
 * Copy `USBInputSwitcher` to `/usr/local/bin`.
 * Copy `com.zaghini.USBInputSwitcher.plist` to `~/Library/LaunchAgents`
 * Create the config file at `~/.usbinputswitcher/config.yaml`
+
+## Config file
+
+`disconnected` is the _Input Source_ selected when the external keyboard is disconnected
+`connected` is a list of USB keyboards with the _Input Source_ to activate when the keyboard is connected 
+
+```yaml
+disconnected: "Colemak"
+connected:
+- usb: "Preonic"
+  inputSourceName: "Australian"
+- usb: "Planck"
+  inputSourceName: "Australian"
+```
