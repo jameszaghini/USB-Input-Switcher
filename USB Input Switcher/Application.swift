@@ -53,14 +53,16 @@ final class Application: USBWatcherDelegate {
     }
 
     private func foundConnected(_ connectedSetting: USBInputPair) {
-        let sources = InputSource.all()
-        let source = sources.first { $0.name == connectedSetting.inputSourceName }
-        source?.activate()
+        activateSourceWithName(connectedSetting.inputSourceName)
     }
 
     private func disconnected() {
+        activateSourceWithName(config.disconnectedInputSourceName)
+    }
+
+    private func activateSourceWithName(_ name: String) {
         let sources = InputSource.all()
-        let source = sources.first { $0.name == config.disconnected }
+        let source = sources.first { $0.name == name }
         source?.activate()
     }
 }

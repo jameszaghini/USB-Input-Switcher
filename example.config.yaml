@@ -1,6 +1,6 @@
-disconnected: "colemak"
+disconnectedInputSourceName: "Colemak"
 connected:
 - usb: "Preonic"
-  on: "Australian"
+  inputSourceName: "Australian"
 - usb: "Planck"
-  on: "Australian"
+  inputSourceName: "Australian"

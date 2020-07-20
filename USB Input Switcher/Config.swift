@@ -10,7 +10,7 @@ import Foundation
 import Yams
 
 struct Config: Decodable {
-    var disconnected: String
+    var disconnectedInputSourceName: String
     var connected: [USBInputPair]
 
     static func read() throws -> Config {
