@@ -17,6 +17,10 @@ chmod +x install.sh
 ./install.sh
 ```
 
+USBInputSwitcher will run at launch.
+
+If you edit the config file at `~/.usbinputswitcher/config.yaml`, it will require a restart to take effect
+
 ## Config file
 
 `disconnected` is the _Input Source_ selected when the external keyboard is disconnected
