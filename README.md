@@ -21,10 +21,10 @@ When unplugging the keyboard, you want it set back to Colemak/Dvorak for the lap
 `connected` is a list of USB keyboards with the _Input Source_ to activate when the keyboard is connected 
 
 ```yaml
-disconnected: "Colemak"
-connected:
-- usb: "Preonic"
-  inputSourceName: "Australian"
-- usb: "Planck"
-  inputSourceName: "Australian"
+inputSourceNames:
+  disconnected: "Colemak"
+  connected: "Australian"
+usbDeviceNames:
+- "Preonic"
+- "Planck"
 ```

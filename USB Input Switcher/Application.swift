@@ -15,10 +15,12 @@ final class Application: USBWatcherDelegate {
 
         do {
             config = try Config.read()
-            usbWatcher = USBWatcher(delegate: self)
         } catch {
+            print("Couldn't parse config. Error: ", error)
             exit(0)
         }
+
+        usbWatcher = USBWatcher(delegate: self)
     }
 
     // MARK: - USBWatcherDelegate
@@ -26,7 +28,7 @@ final class Application: USBWatcherDelegate {
     func deviceAdded(_ device: io_object_t) {
         guard let deviceName = device.name() else { return }
 
-        let targetDevice = findTargetDevice(in: config.connected, with: deviceName)
+        let targetDevice = findTargetDevice(in: config.usbDeviceNames, with: deviceName)
 
         if let targetDevice = targetDevice {
             foundConnected(targetDevice)
@@ -36,7 +38,7 @@ final class Application: USBWatcherDelegate {
     func deviceRemoved(_ device: io_object_t) {
         guard let deviceName = device.name() else { return }
 
-        let targetDevice = findTargetDevice(in: config.connected, with: deviceName)
+        let targetDevice = findTargetDevice(in: config.usbDeviceNames, with: deviceName)
 
         if targetDevice != nil {
             disconnected()
@@ -48,16 +50,16 @@ final class Application: USBWatcherDelegate {
     private var usbWatcher: USBWatcher!
     private let config: Config
 
-    private func findTargetDevice(in connected: [USBInputPair], with deviceName: String) -> USBInputPair? {
-        connected.first { $0.usb == deviceName }
+    private func findTargetDevice(in connected: [USBDeviceName], with deviceName: String) -> USBDeviceName? {
+        connected.first { $0 == deviceName }
     }
 
-    private func foundConnected(_ connectedSetting: USBInputPair) {
-        activateSourceWithName(connectedSetting.inputSourceName)
+    private func foundConnected(_ connectedSetting: USBDeviceName) {
+        activateSourceWithName(config.inputSourceNames.connected)
     }
 
     private func disconnected() {
-        activateSourceWithName(config.disconnectedInputSourceName)
+        activateSourceWithName(config.inputSourceNames.disconnected)
     }
 
     private func activateSourceWithName(_ name: String) {

@@ -9,9 +9,17 @@
 import Foundation
 import Yams
 
+typealias InputSourceName = String
+typealias USBDeviceName = String
+
+struct InputSourceNames: Decodable {
+    let connected: InputSourceName
+    let disconnected: InputSourceName
+}
+
 struct Config: Decodable {
-    var disconnectedInputSourceName: String
-    var connected: [USBInputPair]
+    let inputSourceNames: InputSourceNames
+    let usbDeviceNames: [USBDeviceName]
 
     static func read() throws -> Config {
         let encodedYAML = try String(contentsOf: fileURL, encoding: .utf8)
