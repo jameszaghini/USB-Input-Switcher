@@ -9,11 +9,13 @@ When using an external keyboard with a custom layout Colemak/Dvorak you want the
 
 When unplugging the keyboard, you want it set back to Colemak/Dvorak for the laptop keyboard.
 
-# Setup
+# Install
 
-* Copy `USBInputSwitcher` to `/usr/local/bin`.
-* Copy `com.zaghini.USBInputSwitcher.plist` to `~/Library/LaunchAgents`
-* Create the config file at `~/.usbinputswitcher/config.yaml`
+Download the latest release, edit the example config for your keyboards & inputs sources and then run:
+```
+chmod +x install.sh
+./install.sh
+```
 
 ## Config file
 
