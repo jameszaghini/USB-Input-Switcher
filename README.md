@@ -11,7 +11,7 @@ When unplugging the keyboard, you want it set back to Colemak/Dvorak for the lap
 
 # Install
 
-Download the latest release, edit the example config for your keyboards & inputs sources and then run:
+Download the latest release, edit `example.config.yaml` for your keyboards & inputs sources and then run:
 ```
 chmod +x install.sh
 ./install.sh
