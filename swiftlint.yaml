@@ -1,0 +1,21 @@
+opt_in_rules:
+  - closure_end_indentation
+  - closure_spacing
+  - implicit_return
+  - let_var_whitespace
+  - multiline_literal_brackets
+  - operator_usage_whitespace
+  - unused_declaration
+  - unused_import
+  - redundant_type_annotation
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace_closing_braces
+
+line_length:
+  warning: 120
+  ignores_function_declarations: true
+  ignoreURLs: true
+  ignores_comments: true
+
+identifier_name:
+  min_length: 2
