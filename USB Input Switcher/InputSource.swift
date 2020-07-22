@@ -28,6 +28,6 @@ struct InputSource {
     }
 
     func activate() {
-        TISSelectInputSource(self.source)
+        TISSelectInputSource(source)
     }
 }
