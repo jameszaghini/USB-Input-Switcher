@@ -51,7 +51,7 @@ final class Application: USBWatcherDelegate {
     private let config: Config
 
     private func findTargetDevice(in connected: [USBDeviceName], with deviceName: String) -> USBDeviceName? {
-        connected.first { $0 == deviceName }
+        connected.first { $0.caseInsensitiveCompare(deviceName) == .orderedSame }
     }
 
     private func foundConnected(_ connectedSetting: USBDeviceName) {
@@ -64,7 +64,7 @@ final class Application: USBWatcherDelegate {
 
     private func activateSourceWithName(_ name: String) {
         let sources = InputSource.all()
-        let source = sources.first { $0.name == name }
+        let source = sources.first { $0.name.caseInsensitiveCompare(name) == .orderedSame }
         source?.activate()
     }
 }
