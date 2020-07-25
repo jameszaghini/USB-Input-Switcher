@@ -12,6 +12,7 @@ When unplugging the keyboard, you want it set back to Colemak/Dvorak for the lap
 # Install
 
 Run this with your keyboard plugged in to get it's name
+
 `ioreg -p IOUSB -w0 | sed 's/[^o]*o //; s/@.*$//' | grep -v '^Root.*'`
 
 Download the latest release, edit `example.config.yaml` and add your keyboard's name & add input sources and then run:
