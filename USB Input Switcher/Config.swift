@@ -9,13 +9,7 @@
 import Foundation
 import Yams
 
-typealias InputSourceName = String
 typealias USBDeviceName = String
-
-struct InputSourceNames: Decodable {
-    let connected: InputSourceName
-    let disconnected: InputSourceName
-}
 
 struct Config: Decodable {
     let inputSourceNames: InputSourceNames
